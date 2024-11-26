@@ -14,3 +14,4 @@ app.listen(process.env.PORT,()=>{
     console.log("Server Start :- ",process.env.PORT)
     DataBaseConnect()
 })
+module.exports = app
