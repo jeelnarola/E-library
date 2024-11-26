@@ -1,4 +1,5 @@
 const express = require('express')
+const cors = require('cors')
 const cookie = require('cookie-parser')
 const DataBaseConnect = require('./configs/db.configs')
 const AuthRouter = require('./routers/Auth/auth.router')
@@ -10,6 +11,7 @@ const app = express()
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 app.use(cookie())
+app.use(cors())
 app.use('/api/auth',AuthRouter)
 app.use('/api/book',bookManageUser,book)
 app.get('/',(req,res)=>{
